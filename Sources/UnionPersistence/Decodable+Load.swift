@@ -8,7 +8,7 @@
 import Foundation
 
 extension Decodable {
-    static func load(_ key: String? = nil, using userDefaults: UserDefaults = .standard) -> Self? {
+    public static func load(_ key: String? = nil, using userDefaults: UserDefaults = .standard) -> Self? {
         let key = key ?? String(describing: Self.self)
         guard let data = userDefaults.data(forKey: key) else { return nil }
         let decoder = JSONDecoder()

@@ -8,7 +8,7 @@
 import Foundation
 
 extension Encodable {
-    func save(_ key: String? = nil, using userDefaults: UserDefaults = .standard) {
+    public func save(_ key: String? = nil, using userDefaults: UserDefaults = .standard) {
         let key = key ?? String(describing: type(of: self))
         let encoder = JSONEncoder()
         if let encoded = try? encoder.encode(self) {

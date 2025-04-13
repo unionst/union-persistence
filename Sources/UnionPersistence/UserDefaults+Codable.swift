@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension UserDefaults {
+public extension UserDefaults {
     func setCodable<T: Codable>(_ object: T, forKey key: String) {
         if let encoded = try? JSONEncoder().encode(object) {
             set(encoded, forKey: key)

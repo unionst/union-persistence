@@ -8,7 +8,7 @@
 import Foundation
 
 extension Array where Element: Decodable {
-    static func load() -> Array<Element> {
+    public static func load() -> Array<Element> {
         Array<Element>.load() ?? []
     }
 }

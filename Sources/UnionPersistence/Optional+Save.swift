@@ -8,7 +8,7 @@
 import Foundation
 
 extension Optional where Wrapped: Encodable {
-    func save() {
+    public func save() {
         if let self = self {
             self.save()
         }

@@ -8,7 +8,7 @@
 import Foundation
 
 extension Optional where Wrapped: Decodable {
-    static func load() -> Optional<Wrapped> {
+    public static func load() -> Optional<Wrapped> {
         Wrapped.load()
     }
 }
