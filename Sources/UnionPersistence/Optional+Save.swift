@@ -8,9 +8,14 @@
 import Foundation
 
 extension Optional where Wrapped: Encodable {
-    public func save() {
-        if let self = self {
-            self.save()
+    public func save(_ key: String? = nil, using userDefaults: UserDefaults = .standard) {
+        let key = key ?? String(describing: Wrapped.self)
+        
+        switch self {
+        case .some(let value):
+            value.save(key, using: userDefaults)
+        case .none:
+            userDefaults.removeObject(forKey: key)
         }
     }
 }

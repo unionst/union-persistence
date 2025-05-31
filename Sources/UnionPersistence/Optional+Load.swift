@@ -8,7 +8,8 @@
 import Foundation
 
 extension Optional where Wrapped: Decodable {
-    public static func load() -> Optional<Wrapped> {
-        Wrapped.load()
+    public static func load(_ key: String? = nil, using userDefaults: UserDefaults = .standard) -> Optional<Wrapped> {
+        let key = key ?? String(describing: Wrapped.self)
+        return Wrapped.load(key, using: userDefaults)
     }
 }
